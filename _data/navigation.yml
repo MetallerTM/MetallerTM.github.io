@@ -1,0 +1,37 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "About Me"
+    url: /about
+  - title: "Softwares"
+    url: /softwares
+  - title: "Contacts"
+    url: /contacts
+  - title: "Publications"
+    url: /publications
+  - title: "Material"
+    url: /material
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+  #
+
+sw:
+  - title: "List of Softwares"
+    children:
+      - title: "KLASSEZ"
+        url: /softwares/klassez
+      - title: "pyIHM"
+        url: /softwares/pyihm
+
+about-sidebar:
+  - image: "/assets/images/naologo.webp"
+    image_alt: "Francesco Bruno"
+  - title: "Personal Information"
+    text: "**Date of Birth:** 16 January 1998\n**Nationality:** Italian\n**Email:** [bruno@cerm.unifi.it](mailto:bruno@cerm.unifi.it)\n**Languages:** Italian (native), English (proficient)\n**Google Scholar:** [Profile](https://scholar.google.com/citations?user=zeFe_0IAAAAJ&hl=it)"
+

@@ -1,0 +1,190 @@
+\documentclass[a4paper, 12pt, notitlepage]{article}
+
+
+%%% Encoding and language
+
+\usepackage[T1]{fontenc}		% encoding output + accented characters
+\usepackage[utf8]{inputenc}		% encoding of the source files
+\usepackage[italian, english]{babel}	% typo rules
+
+
+%%% Mathematics
+
+\usepackage[fleqn]{amsmath}	% fundamental maths, fleqn aligns equations to the left
+\usepackage{mathtools}		% extension of amsmath
+\usepackage[bbgreekl]{mathbbol} % mathematical bold font for greek letters
+\usepackage{amssymb}		% extra maths symbols
+\usepackage{amsthm}		% theorems
+    \theoremstyle{plain}% default
+    \theoremstyle{definition}% default
+        \newtheorem{theorem}{Theorem}
+        \newtheorem{defn}{Definition}
+        \newtheorem{oss}{Note}
+        \newtheorem{exmp}{Example}[section]
+
+\usepackage{physics}		% shortcut maths for physics
+\usepackage[bb=libus]{mathalpha}% lowercase mathbb letters
+\usepackage{bbold}              % alternative doublestroke for e.g. 1
+\usepackage{dsfont} 	        % doublestroke font per \mathds (Numbers like 1)
+
+
+%%% Chemistry and mesuring units
+
+\usepackage{siunitx}		% correct formatting of numbers and SI units
+\sisetup{exponent-product = \cdot, output-product = \cdot}
+\usepackage{chemformula}        % brute chemical formula
+
+
+%%% Layout and pagination
+
+\usepackage{geometry}		% set of the page margins
+    % --> A5, due lati, \thepage in alto
+    %\geometry{top=2.0cm, bottom=1.5cm, inner=1.5cm, outer=1.5cm}	
+    % --> A4, un lato, \thepage in basso
+    \geometry{top=1.5cm, bottom=2.0cm, inner=1.5cm, outer=1.5cm}
+
+
+% Customize headers and footers
+\usepackage{fancyhdr}
+	% Normal pages
+	\pagestyle{fancy}
+	\fancyfoot[C]{\thepage}
+	\fancyhead[CE,CO]{}
+	\fancyhead[RE,LO]{}
+	\fancyhead[LE,RO]{}
+	\fancyfoot[LE,RO]{}
+	\setlength{\headheight}{15pt}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	
+	% Title pages
+	\fancypagestyle{plain}{%
+	\fancyhf{}
+	\setlength{\headheight}{15pt}
+	\fancyhead[E]{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0.4pt}}
+
+        % --> For BOOK class, header of the page --> Only name of the chapter
+	%\renewcommand{\chaptermark}[1]{%
+	%\markboth{#1}{}}
+
+\usepackage{titlesec}           % Redefine style of chapter titles and sections
+    \titleformat{\chapter}[block]%
+    {\normalfont\bfseries\Huge}{\thechapter.}{10pt}{}
+
+\usepackage{float}              % Advanced control on mobile environments ([H])
+\usepackage[section]{placeins}  % \FloatBarrier
+
+%%% Figures and tables
+\usepackage{caption}		% Captions
+\usepackage{graphicx}				% figures
+	\graphicspath{{./Immagini/}}		% where are the figures?
+\usepackage{subfig}				% multiple figures
+\usepackage{subfloat}				% further multiple figures
+
+\usepackage{array}				% extend tabular and array env fortables
+% extra alignment options
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}	% like "p" but centered
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}	% like "m" but centered
+\usepackage{booktabs}				% Typographically corrected table lines
+\captionsetup{font=footnotesize, labelfont=bf}  % options for captions, after subfig
+
+
+%%% Colors, links and PDFs
+
+\usepackage[svgnames,dvipsnames,x11names]{xcolor}	% a lot of colors!
+
+\usepackage[hidelinks]{hyperref}        % hyperlinks internal and external
+\hypersetup{
+    colorlinks=false,   % set true if you want colored links
+    linktoc=all,        % set to "all" if you want both sections and subsections linked
+    %linkcolor=blue,  % choose some color if you want links to stand out
+}
+
+\usepackage[final]{pdfpages}    % External pdfs
+
+
+%%% TEXT and misc
+
+\usepackage{quoting}	        % Quotes in minor font
+	\quotingsetup{font=small}
+
+
+\usepackage[normalem]{ulem}     % strikethrough and underlined text, without overwriting emph
+\usepackage{comment}            % multiline comments
+\usepackage{xr}                 % cross references between separate tex files
+
+
+%%% Coding
+
+\usepackage[newfloat]{minted}   % Syntax higlighting and import
+\captionsetup[listing]{         % put caption on top
+    position=top,
+    justification=raggedright,
+    singlelinecheck=false,
+    format=hang,
+}
+% basic configuration
+\setminted{
+    style            = friendly,
+    fontsize         = \small,
+    fontfamily       = tt,          % monospace
+    linenos          = false,       % true for numbers
+    numbersep        = 12pt,
+    frame            = lines,       % top & bottom rules only
+    framerule        = 0.7pt,
+    framesep         = 3mm,
+    rulecolor        = Black,
+    bgcolor          = gray!10,
+    breaklines       = true,
+    breakanywhere    = true,
+    tabsize          = 4,
+}
+
+
+%%% Bibliography
+
+\usepackage[autostyle=true,italian=guillemets]{csquotes}        % advanced control on "" 
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex} % bibliographic motor
+    \addbibresource{references.bib}                             % reference source
+
+% Add \fullcite quotes with \mybibexclude{<label>}.
+% To exclude these entries from bibliography, use:
+%	\printbibliography[notcategory=fullcited]
+\DeclareBibliographyCategory{fullcited}
+\newcommand{\mybibexclude}[1]{\addtocategory{fullcited}{#1}}
+
+%==================================================================================================
+
+%%% GENERAL CONFIGURATION
+
+\setcounter{tocdepth}{2}        % Depth of the TOC
+
+
+%%% New commands
+
+\newcommand*{\hham}{\hat{\mathcal{H}}}  % Hamiltonian
+\newcommand*{\mb}[1]{\mathbb{#1}}       % shortcut for mathbb
+\newcommand*{\ds}[1]{\mathds{#1}}       % shortcut for mathds (math bold digits)
+\newcommand*{\mc}[1]{\mathcal{#1}}      % shortcut for mathcal
+
+\newcommand{\eps}{\varepsilon}          % nice epsilon
+\newcommand{\ui}{\mathrm{i}}            % roman "i" for imaginary unit
+
+% concentration units
+\newcommand{\molar}{mol\,dm^{-3}}       
+\newcommand{\mmolar}{mmol\,dm^{-3}}
+
+% floor and ceiling
+\newcommand*{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\newcommand*{\ceil}[1]{\left \lceil #1 \right \rceil}
+
+%=====================================================================================
+
+\begin{document}
+
+
+\end{document}
+
