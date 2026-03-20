@@ -35,7 +35,7 @@ reCaptcha:
   secret                 : # "6LcvdI0sAAAAADrdKY1vFEa6G9qR4iP5hcx7QYFR"
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true
 
 social:
   type                   : # Person or Organization (defaults to Person)
@@ -93,6 +93,15 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/MetallerTM"
+    - label: "PyPI"
+      icon: "fas fa-fw fa-cube"
+      url: "https://pypi.org/user/MetallerTM/"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=zeFe_0IAAAAJ&hl=it"
+    - label: "ORCID"
+      icon: "fa-brands fa-orcid"
+      url: "https://orcid.org/0000-0002-4590-4316"
   since: "2026"
 
 
