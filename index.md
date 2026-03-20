@@ -14,4 +14,12 @@ header:
 ---
 # Welcome to Francesco Bruno's website
 
-Hello world!
+Hello! I am Francesco: chemist, NMR spectroscopist, and Python programmer.  
+I write softwares for NMR data processing and analysis.
+
+[Look at my works!](/softwares){: .btn .btn--primary}
+
+Currently employed at the Magnetic Resonance Center (CERM) of the University of Florence, Italy.  
+
+[See my expertise](/about){: .btn .btn--primary}
+[Get in touch](/contacts){: .btn .btn--primary}
