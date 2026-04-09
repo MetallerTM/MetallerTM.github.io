@@ -28,6 +28,10 @@ sw:
         url: /softwares/klassez
       - title: "pyIHM"
         url: /softwares/pyihm
+      - title: "T1T2ne"
+        url: /softwares/t1t2ne
+      - title: "TrAGICo"
+        url: /softwares/tragico
 
 about-sidebar:
   - image: "/assets/images/naologo.webp"

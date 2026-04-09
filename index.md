@@ -7,7 +7,7 @@ excerpt: |
   -- Neil deGrasse Tyson
 header:
   overlay_image: /assets/images/header.jpg
-  caption: "I will change this later"
+  caption:
   actions:
     - label: "Who am I"
       url: /about
